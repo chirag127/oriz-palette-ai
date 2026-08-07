@@ -1,0 +1,132 @@
+:root {
+  /* ===== oriz-palette-ai — design-agency identity =====
+     Confident off-white ground, graphite ink, a shifting accent that the page
+     ADOPTS from the brand it just generated (signature live re-theme). Strong
+     grotesk display, humanist-grotesque body. Distinct from oriz-color's museum
+     neutrality: this is a studio that wears its client's colors. */
+
+  /* color roles (contract override) — studio defaults before any generation */
+  --oz-bg: #f4f2ec;          /* warm off-white paper */
+  --oz-fg: #1a1a1a;          /* graphite ink */
+  --oz-surface: #fbfaf7;     /* raised card */
+  --oz-muted: #6a675f;       /* label grey */
+  --oz-border: #ddd9cf;      /* hairline */
+  --oz-accent: #ff5c38;      /* studio default accent — OVERRIDDEN live */
+  --oz-accent-fg: #ffffff;
+
+  /* chrome aliases (oz-chrome/styles.css reads these) */
+  --oz-paper: #f4f2ec;
+  --oz-paper-2: #ebe8e0;
+  --oz-ink: #1a1a1a;
+  --oz-ink-mute: #6a675f;
+  --oz-rule: #ddd9cf;
+  --oz-header-h: 4rem;
+  --oz-container: 78rem;
+  --oz-text-lg: 1.35rem;
+  --oz-text-md: 1rem;
+  --oz-text-sm: 0.875rem;
+  --oz-space-5: 1.25rem;
+  --oz-z-overlay: 1000;
+
+  /* bespoke tokens */
+  --pa-graphite: #1a1a1a;
+  --pa-graphite-2: #2c2b28;
+  --pa-well: #ebe8e0;
+  --pa-hair: #ddd9cf;
+  --pa-hair-strong: #cbc6ba;
+  --pa-shadow: 0 1px 2px rgba(26, 26, 26, 0.05), 0 10px 30px rgba(26, 26, 26, 0.08);
+  --pa-shadow-lift: 0 4px 12px rgba(26, 26, 26, 0.08), 0 24px 60px rgba(26, 26, 26, 0.14);
+
+  /* live brand roles — set inline by the island on generate; safe defaults */
+  --brand-1: #ff5c38;
+  --brand-2: #1a1a1a;
+  --brand-3: #f4f2ec;
+  --brand-4: #ffb43d;
+  --brand-5: #2f6df6;
+  --brand-deep: #111014;
+
+  /* font slots */
+  --oz-font-display: 'Space Grotesk Variable', 'Space Grotesk', system-ui, sans-serif;
+  --oz-font-body: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --oz-font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --oz-bg: #14130f;
+    --oz-fg: #f1efe8;
+    --oz-surface: #1c1b16;
+    --oz-muted: #9d998e;
+    --oz-border: #2e2c26;
+    --oz-accent: #ff6b4a;
+    --oz-accent-fg: #14130f;
+
+    --oz-paper: #14130f;
+    --oz-paper-2: #1a1914;
+    --oz-ink: #f1efe8;
+    --oz-ink-mute: #9d998e;
+    --oz-rule: #2e2c26;
+
+    --pa-graphite: #f1efe8;
+    --pa-graphite-2: #d8d5cc;
+    --pa-well: #1a1914;
+    --pa-hair: #2e2c26;
+    --pa-hair-strong: #3c3a32;
+    --pa-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5);
+    --pa-shadow-lift: 0 4px 12px rgba(0, 0, 0, 0.45), 0 24px 60px rgba(0, 0, 0, 0.6);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  background: var(--oz-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in oklab, var(--brand-1) 12%, transparent), transparent 60%),
+    var(--oz-bg);
+  color: var(--oz-fg);
+  font-family: var(--oz-font-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background var(--oz-dur-slow, 360ms) var(--oz-ease-out, ease);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--oz-font-display);
+  letter-spacing: -0.03em;
+  line-height: 1.0;
+  margin: 0;
+  font-weight: 700;
+}
+
+a { color: inherit; }
+
+::selection {
+  background: var(--brand-1);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand-1);
+  outline-offset: 2px;
+  border-radius: var(--oz-radius-s);
+}
+
+/* studio eyebrow */
+.eyebrow {
+  font-family: var(--oz-font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--oz-muted);
+}

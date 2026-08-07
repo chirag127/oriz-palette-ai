@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Studio from '../components/Studio.tsx'
+---
+
+<Layout>
+  <section class="hero">
+    <p class="eyebrow">brand.oriz.in · the AI brand studio</p>
+    <h1 class="hero__title">Describe a brand.<br />Watch it become one.</h1>
+    <p class="hero__lede">
+      Type a one-line brief. Get a complete identity — palette, type pairing,
+      tagline, voice, and a logo-concept prompt — then this whole page
+      <em>re-themes itself</em> to the brand it just made. Preview a mock
+      landing card, generate a logo concept, export CSS + JSON tokens. Nothing
+      leaves your browser.
+    </p>
+    <ul class="hero__spec">
+      <li>palette + fonts + copy</li>
+      <li>WCAG AA checked</li>
+      <li>CSS / JSON export</li>
+      <li>no upload · no signup</li>
+    </ul>
+  </section>
+
+  <Studio client:load />
+</Layout>
+
+<style>
+  .hero {
+    padding: 1.5rem 0 2.5rem;
+    max-width: 52rem;
+  }
+  .hero__title {
+    font-size: clamp(2.6rem, 8vw, 5.5rem);
+    margin: 0.6rem 0 1rem;
+  }
+  .hero__title :global(br) {
+    display: none;
+  }
+  @media (min-width: 640px) {
+    .hero__title :global(br) {
+      display: inline;
+    }
+  }
+  .hero__lede {
+    font-size: 1.15rem;
+    color: var(--oz-fg);
+    margin: 0 0 1.4rem;
+    max-width: 44rem;
+  }
+  .hero__lede em {
+    font-style: normal;
+    color: var(--brand-1);
+    font-weight: 600;
+  }
+  .hero__spec {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.4rem;
+    padding: 0;
+    margin: 0;
+    font-family: var(--oz-font-mono);
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    color: var(--oz-muted);
+  }
+  .hero__spec li {
+    position: relative;
+    padding-left: 1rem;
+  }
+  .hero__spec li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    background: var(--brand-1);
+  }
+</style>
