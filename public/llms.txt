@@ -5,7 +5,7 @@
 ## Site
 
 - [Live app](https://brand.oriz.in): the AI brand studio — type a brief, generate a full brand kit, watch the page re-theme live.
-- [About / info page](https://chirag127.github.io/oriz-brand/): what oriz brand is, its features, and its tech.
+- [About / info page](https://chirag127.github.io/oriz-palette-ai/): what oriz brand is, its features, and its tech.
 - [Source repo](https://github.com/chirag127/oriz-palette-ai): MIT-licensed Astro + React source on GitHub.
 
 ## Features

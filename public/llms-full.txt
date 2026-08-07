@@ -2,7 +2,7 @@
 
 Live app: https://brand.oriz.in
 Source: https://github.com/chirag127/oriz-palette-ai
-About/info: https://chirag127.github.io/oriz-brand/
+About/info: https://chirag127.github.io/oriz-palette-ai/
 
 Describe a brand, get a full identity: palette, font pairing, tagline, voice, and a logo-concept prompt. Live-preview a mock landing card and export design tokens (CSS/JSON). 100% in your browser — no upload, no signup.
 

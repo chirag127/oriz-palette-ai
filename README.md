@@ -1,7 +1,7 @@
 # oriz brand — AI brand-kit generator
 
 - **Live app:** https://brand.oriz.in
-- **About / info:** https://chirag127.github.io/oriz-brand/
+- **About / info:** https://chirag127.github.io/oriz-palette-ai/
 - **llms.txt:** https://brand.oriz.in/llms.txt
 
 Describe a brand in one line, get a complete identity — palette, font pairing, tagline, brand voice, and a logo-concept prompt — then the whole page **re-themes itself** to the brand it just made. Preview a mock landing card, generate a logo concept, and export design tokens as CSS or JSON.
@@ -35,7 +35,7 @@ flowchart LR
 ## Two surfaces
 
 - **CF Pages (the app):** https://brand.oriz.in — the live tool.
-- **GitHub Pages (info):** https://chirag127.github.io/oriz-brand/ — a separate page *about* the project (what it is, features, tech), published from `gh-info/` via `.github/workflows/gh-pages-info.yml`.
+- **GitHub Pages (info):** https://chirag127.github.io/oriz-palette-ai/ — a separate page *about* the project (what it is, features, tech), published from `gh-info/` via `.github/workflows/gh-pages-info.yml`.
 - **llms.txt:** https://brand.oriz.in/llms.txt (+ `/llms-full.txt`) — machine-readable summaries for AI agents.
 
 ## Stack
