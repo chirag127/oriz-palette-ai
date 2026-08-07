@@ -1,14 +1,16 @@
 # oriz brand — AI brand-kit generator
 
-**Live: https://brand.oriz.in**
+- **Live app:** https://brand.oriz.in
+- **About / info:** https://chirag127.github.io/oriz-brand/
+- **llms.txt:** https://brand.oriz.in/llms.txt
 
 Describe a brand in one line, get a complete identity — palette, font pairing, tagline, brand voice, and a logo-concept prompt — then the whole page **re-themes itself** to the brand it just made. Preview a mock landing card, generate a logo concept, and export design tokens as CSS or JSON.
 
-> 100% client-side. No upload, no signup, no server. Your brief never leaves your browser.
+> **100% client-side, no upload, no signup, free.** Your brief never leaves your browser.
 
 ## What it does
 
-- **Brief → identity** — a short prompt yields a full `BrandKit` (name, tagline, voice, 5-swatch palette, heading/body font pair, logo prompt).
+- **Brief -> identity** — a short prompt yields a full `BrandKit` (name, tagline, voice, 5-swatch palette, heading/body font pair, logo prompt).
 - **Live re-theme (signature)** — generated palette is applied to the page's `--oz-*` tokens; the studio wears the client's colors.
 - **Mock landing preview** — a card that adopts the brand's palette + type so you see it in context.
 - **WCAG check** — each swatch shows its contrast grade on white (AAA / AA / AA Large / Fail).
@@ -21,14 +23,20 @@ AI is the core here, but it degrades gracefully: if every provider is down you g
 
 ```mermaid
 flowchart LR
-  Brief["one-line brief"] --> AI["@chirag127/oz-ai · complete()"]
+  Brief["one-line brief"] --> AI["@chirag127/oz-ai . complete()"]
   AI --> JSON["extractJson + toBrandKit"]
   JSON --> Kit["BrandKit"]
-  Kit --> Theme["paletteToTokens → :root --oz-*"]
+  Kit --> Theme["paletteToTokens -> :root --oz-*"]
   Kit --> Preview["PreviewCard (landing mock)"]
   Kit --> Export["toCssTokens / toJsonTokens"]
-  Kit -. on click .-> Logo["oz-ai image() · flux (lazy)"]
+  Kit -. on click .-> Logo["oz-ai image() . flux (lazy)"]
 ```
+
+## Two surfaces
+
+- **CF Pages (the app):** https://brand.oriz.in — the live tool.
+- **GitHub Pages (info):** https://chirag127.github.io/oriz-brand/ — a separate page *about* the project (what it is, features, tech), published from `gh-info/` via `.github/workflows/gh-pages-info.yml`.
+- **llms.txt:** https://brand.oriz.in/llms.txt (+ `/llms-full.txt`) — machine-readable summaries for AI agents.
 
 ## Stack
 
@@ -59,4 +67,4 @@ Everything runs in your browser. The brief is sent only to keyless AI providers 
 
 ## License
 
-MIT © 2026 Chirag Singhal
+MIT (c) 2026 Chirag Singhal

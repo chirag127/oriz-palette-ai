@@ -1,0 +1,24 @@
+# oriz brand — AI brand-kit generator
+
+> Describe a brand in one line and get a complete identity — palette, font pairing, tagline, brand voice, and a logo-concept prompt. The page re-themes itself to the brand it just made; preview a mock landing card, generate a logo concept, and export design tokens as CSS or JSON. 100% client-side: no upload, no signup, no server — your brief never leaves the browser.
+
+## Site
+
+- [Live app](https://brand.oriz.in): the AI brand studio — type a brief, generate a full brand kit, watch the page re-theme live.
+- [About / info page](https://chirag127.github.io/oriz-brand/): what oriz brand is, its features, and its tech.
+- [Source repo](https://github.com/chirag127/oriz-palette-ai): MIT-licensed Astro + React source on GitHub.
+
+## Features
+
+- [Brief to identity](https://brand.oriz.in): a one-line prompt yields a full BrandKit — name, tagline, voice, 5-swatch palette, heading/body font pair, logo prompt.
+- [Live re-theme (signature)](https://brand.oriz.in): the generated palette is applied to the page's `--oz-*` tokens so the studio wears the client's colors.
+- [Mock landing preview](https://brand.oriz.in): a landing card that adopts the brand's palette and type so you see it in context.
+- [WCAG contrast check](https://brand.oriz.in): each swatch shows its contrast grade on white (AAA / AA / AA Large / Fail).
+- [Logo concept](https://brand.oriz.in): optional, lazy-loaded flux image via a keyless multi-provider AI; copy-ready prompt for any image model.
+- [Token export](https://brand.oriz.in): one-click *-tokens.css (:root custom props) and *-tokens.json (design-token JSON).
+
+## Tech
+
+- [Astro 6 + React 19](https://astro.build): static output, one interactive React island (the studio); Tailwind v4 via @tailwindcss/vite.
+- [Keyless AI](https://github.com/chirag127/oz-ai): all generation runs in-browser through @chirag127/oz-ai (g4f / gpt4free, multi-provider failover, no API key).
+- [Privacy](https://brand.oriz.in): everything runs in your browser; no cookies, no analytics, no accounts, nothing stored or uploaded.

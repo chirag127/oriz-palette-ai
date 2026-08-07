@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About oriz brand — AI brand-kit generator</title>
+    <meta name="description" content="About oriz brand: an AI brand-kit generator that turns a one-line brief into a palette, fonts, tagline, and logo idea — 100% in your browser. Project info, features, tech, and links." />
+    <link rel="canonical" href="https://chirag127.github.io/oriz-brand/" />
+    <style>
+      :root {
+        --bg: #0e1116;
+        --panel: #161b22;
+        --fg: #e6edf3;
+        --muted: #9aa7b4;
+        --accent: #ffcf4d;
+        --accent-2: #7c9cff;
+        --border: #2a313c;
+        --radius: 14px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        color: var(--fg);
+        background: radial-gradient(1200px 600px at 80% -10%, #1b2130, var(--bg));
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 52rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+      .badge {
+        display: inline-block;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 0.25rem 0.7rem;
+        margin-bottom: 1rem;
+      }
+      h1 { font-size: clamp(2rem, 6vw, 3rem); margin: 0 0 0.4rem; line-height: 1.1; }
+      .lede { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.6rem; }
+      .cta { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 0 0 2.5rem; }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 0.65rem 1.1rem;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        color: var(--fg);
+        background: var(--panel);
+        transition: border-color 0.15s, transform 0.05s;
+      }
+      .btn:hover { border-color: var(--accent-2); }
+      .btn:active { transform: translateY(1px); }
+      .btn--primary { background: var(--accent); color: #1a1200; border-color: var(--accent); }
+      h2 { font-size: 1.3rem; margin: 2.2rem 0 0.7rem; }
+      ul { padding-left: 1.2rem; margin: 0 0 1rem; }
+      li { margin: 0.35rem 0; }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.2rem 1.4rem;
+        margin: 1rem 0;
+      }
+      code {
+        background: #0b0e13;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 0.1rem 0.4rem;
+        font-size: 0.9em;
+      }
+      a { color: var(--accent-2); }
+      .note { color: var(--muted); font-size: 0.95rem; }
+      footer {
+        margin-top: 3rem;
+        padding-top: 1.4rem;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      footer a { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <span class="badge">About this project</span>
+      <h1>oriz brand</h1>
+      <p class="lede">
+        An AI brand-kit generator — describe a brand in one line and get a
+        palette, font pairing, tagline, brand voice, and a logo idea, then
+        export the tokens. This is the project info page, not the tool itself.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn--primary" href="https://brand.oriz.in">Open the live app &rarr;</a>
+        <a class="btn" href="https://github.com/chirag127/oriz-palette-ai">Source on GitHub</a>
+        <a class="btn" href="https://brand.oriz.in/llms.txt">llms.txt</a>
+      </div>
+
+      <h2>What it is</h2>
+      <p>
+        oriz brand turns a one-line brief into a complete visual identity —
+        a 5-swatch palette, a heading/body font pairing, a tagline, a brand
+        voice, and a copy-ready logo-concept prompt. Its signature move: once a
+        kit is generated, the whole studio <strong>re-themes itself</strong> to
+        the brand it just made, so you see the identity in place. You can then
+        export the design tokens as CSS or JSON.
+      </p>
+
+      <h2>Key features</h2>
+      <ul>
+        <li><strong>Brief &rarr; identity</strong> — one prompt yields a full brand kit (name, tagline, voice, palette, fonts, logo prompt).</li>
+        <li><strong>Live re-theme</strong> — the generated palette is applied to the page's design tokens instantly.</li>
+        <li><strong>Mock landing preview</strong> — a card adopts the brand's palette + type so you judge it in context.</li>
+        <li><strong>WCAG contrast check</strong> — each swatch shows its grade on white (AAA / AA / AA Large / Fail).</li>
+        <li><strong>Logo concept</strong> — optional, lazy-loaded flux image; the prompt works in any image model too.</li>
+        <li><strong>Token export</strong> — one-click CSS (<code>:root</code> custom props) and JSON design tokens.</li>
+      </ul>
+
+      <h2>Tech</h2>
+      <div class="panel">
+        <ul>
+          <li>Client-only <strong>Astro</strong> (static output) with a single React island for the studio.</li>
+          <li>AI via <strong>@chirag127/oz-ai</strong> (g4f / gpt4free, multi-provider failover, <strong>no API key</strong>).</li>
+          <li><strong>PWA-installable</strong> — add it to your home screen; the shell works offline.</li>
+          <li><strong>100% in-browser</strong> — no upload, no signup, no server. Your brief never leaves your device.</li>
+        </ul>
+        <p class="note">
+          AI is the core, but it degrades gracefully: if every provider is down
+          you get a clear error and the UI stays intact.
+        </p>
+      </div>
+
+      <h2>Links</h2>
+      <ul>
+        <li><a href="https://brand.oriz.in">Live app</a> — brand.oriz.in</li>
+        <li><a href="https://github.com/chirag127/oriz-palette-ai">Source repository</a> — chirag127/oriz-palette-ai</li>
+        <li><a href="https://brand.oriz.in/llms.txt">llms.txt</a> — machine-readable summary for AI agents</li>
+      </ul>
+
+      <footer>
+        MIT (c) 2026 Chirag Singhal &middot;
+        <a href="https://brand.oriz.in">brand.oriz.in</a> &middot;
+        This is the info page. The tool lives at
+        <a href="https://brand.oriz.in">brand.oriz.in</a>.
+      </footer>
+    </main>
+  </body>
+</html>

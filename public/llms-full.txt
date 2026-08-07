@@ -1,0 +1,107 @@
+# oriz brand — AI brand-kit generator
+
+Live app: https://brand.oriz.in
+Source: https://github.com/chirag127/oriz-palette-ai
+About/info: https://chirag127.github.io/oriz-brand/
+
+Describe a brand, get a full identity: palette, font pairing, tagline, voice, and a logo-concept prompt. Live-preview a mock landing card and export design tokens (CSS/JSON). 100% in your browser — no upload, no signup.
+
+---
+
+## Hero
+
+brand.oriz.in · the AI brand studio
+
+Describe a brand. Watch it become one.
+
+Type a one-line brief. Get a complete identity — palette, type pairing, tagline, voice, and a logo-concept prompt — then this whole page re-themes itself to the brand it just made. Preview a mock landing card, generate a logo concept, export CSS + JSON tokens. Nothing leaves your browser.
+
+At a glance:
+- palette + fonts + copy
+- WCAG AA checked
+- CSS / JSON export
+- no upload · no signup
+
+---
+
+## How it works
+
+1. Enter a brief. Type one line describing a brand — e.g. "a warm neighborhood bakery with a modern edge" — or tap an example chip.
+2. AI generates the kit. The brief is sent to a keyless, multi-provider AI (via @chirag127/oz-ai; g4f/gpt4free with automatic failover). It returns a structured BrandKit: brand name, tagline, brand voice, a 5-swatch palette, a heading/body font pairing, and a logo-concept prompt.
+3. The page re-themes live (signature feature). The generated palette is applied to the page's `--oz-*` CSS custom properties, so the studio itself wears the new brand's colors immediately.
+4. Review and export. Inspect the palette with per-swatch WCAG grades, see the type pairing, view a mock landing card, optionally render a logo concept image, and export tokens as CSS or JSON.
+
+Example briefs:
+- a calm sleep-tracking app for new parents
+- an artisanal cold-brew coffee subscription
+- a bold indie game studio making retro shooters
+- a premium electric-bike rental service
+- a friendly personal-finance app for freshers
+
+---
+
+## Features (full descriptions)
+
+### Brief to identity
+A short prompt yields a full BrandKit object: name, tagline, voice, a 5-swatch palette, a heading/body font pair, and a logo prompt. The domain logic (parsing the AI reply, extracting JSON, building the kit) lives in pure, unit-tested code.
+
+### Live re-theme (the signature)
+The generated palette is written straight into the page's `--oz-*` design tokens. The studio does not just show you the brand — it becomes the brand, in place, the moment generation finishes. Tokens are cleaned up when the kit changes.
+
+### Mock landing preview
+A landing card adopts the brand's palette and type pairing so you can judge the identity in a realistic context, not just as isolated swatches. The card auto-picks a readable background from the palette.
+
+### WCAG contrast check
+Every swatch displays its contrast grade against white: AAA, AA, AA Large, or Fail. Contrast ratios are computed locally so you catch accessibility problems before you ship the palette.
+
+### Type pairing
+A heading font and a body font are proposed and previewed live with system fallbacks. A note reminds you to add the real families (e.g. from Google Fonts) in your build.
+
+### Logo concept (optional)
+Tap "generate logo" to render a concept image via the flux model, lazy-loaded through @chirag127/oz-ai so the page stays fast until you ask for it. A copy-ready logo prompt is always shown and works in any image model, even if you skip the in-app render.
+
+### Token export
+One click exports `<brand>-tokens.css` (a `:root` block of CSS custom properties) and `<brand>-tokens.json` (a design-token JSON file), ready to drop into a real project. Downloads use @chirag127/oz-file's downloadBlob — entirely client-side.
+
+### Graceful degradation
+AI is the core, but it fails safe: if every provider is down you get a clear, actionable error and the UI stays intact. Nothing crashes; you can retry.
+
+---
+
+## Tech
+
+- Astro 6, static output. Only the studio is an interactive React 19 island; the rest is static HTML.
+- Tailwind v4 via `@tailwindcss/vite`, on top of a bespoke `--oz-*` token theme.
+- Shared atomic packages (one source of truth, themed per site):
+  - @chirag127/oz-ai — all AI: text completion and image generation via g4f/gpt4free with multi-provider failover, no API key.
+  - @chirag127/oz-file — downloadBlob for client-side token export.
+  - @chirag127/oz-tokens-base — the `--oz-*` token contract, overridden with this site's palette.
+  - @chirag127/oz-chrome — the oriz.in wordmark plus header/footer/tool-shell.
+- Pure domain logic in src/lib/brand.ts (brief parsing, WCAG contrast, token export) — unit-tested with vitest.
+- PWA-installable, works offline for the shell.
+
+---
+
+## FAQ
+
+Is it free? Yes. Free, no signup, no account, no card.
+
+Does my brief leave my browser? Only to reach the keyless AI providers that generate the kit. Nothing is stored, logged, or uploaded to any oriz server. No cookies, no analytics.
+
+Do I need an API key? No. AI runs through keyless multi-provider fallback in the browser.
+
+What if the AI is down? You get a clear error and can retry; the UI never breaks.
+
+Can I use the exported tokens in production? Yes — the CSS is a standard `:root` custom-property block and the JSON is a plain design-token file. Add the real font families from Google Fonts in your own build.
+
+What powers the logo image? The flux image model, reached via @chirag127/oz-ai, lazy-loaded on demand.
+
+---
+
+## Privacy
+
+Everything runs in your browser. The brief is sent only to keyless AI providers to generate the kit; nothing is stored, logged, or uploaded to any oriz server. No cookies, no analytics, no accounts.
+
+## License
+
+MIT © 2026 Chirag Singhal
