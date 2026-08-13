@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run",
-    "deploy": "astro build && wrangler pages deploy dist --project-name oriz-brand --branch main --commit-dirty=true"
+    "deploy": "astro build && wrangler pages deploy dist --project-name oriz-palette-ai --branch main --commit-dirty=true"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",

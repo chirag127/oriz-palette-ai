@@ -58,7 +58,7 @@ npm install --legacy-peer-deps
 npm run dev       # local
 npm test          # vitest — pure logic
 npm run build     # static dist/
-npm run deploy    # build + wrangler pages deploy (project: oriz-brand)
+npm run deploy    # build + wrangler pages deploy (project: oriz-palette-ai)
 ```
 
 ## Privacy
