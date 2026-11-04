@@ -12,8 +12,8 @@
     "deploy": "astro build && wrangler pages deploy dist --project-name oriz-palette-ai --branch main --commit-dirty=true"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.0",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/react": "^7.1.2",
+    "@astrojs/sitemap": "^3.7.4",
     "@chirag127/oz-ai": "^0.3.3",
     "@chirag127/oz-chrome": "^0.1.0",
     "@chirag127/oz-file": "^0.1.0",
@@ -21,17 +21,17 @@
     "@fontsource-variable/archivo": "^5.2.5",
     "@fontsource-variable/space-grotesk": "^5.2.5",
     "@tailwindcss/vite": "^4.1.13",
-    "@vite-pwa/astro": "^1.2.0",
-    "astro": "^6.4.8",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "@vite-pwa/astro": "^2.0.0",
+    "astro": "^7.4.4",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
-    "@types/react": "^19.2.0",
-    "@types/react-dom": "^19.2.0",
-    "typescript": "^5.9.2",
-    "vitest": "^3.2.4",
-    "wrangler": "^4.42.0"
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.156.0"
   }
 }
