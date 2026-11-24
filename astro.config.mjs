@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
-import AstroPWA from '@vite-pwa/astro'
+import { AstroPWAIntegration } from '@vite-pwa/astro'
 
 export default defineConfig({
   site: 'https://brand.oriz.in',
@@ -11,7 +11,7 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
-    AstroPWA({
+    AstroPWAIntegration({
       registerType: 'autoUpdate',
       injectRegister: 'auto',
       includeAssets: ['favicon.svg', 'icons/*.png', 'icons/*.svg', '.well-known/assetlinks.json'],
@@ -42,7 +42,7 @@ export default defineConfig({
           { src: '/screenshots/mobile.png', sizes: '390x844', type: 'image/png', label: 'oriz Brand — mobile' },
         ],
       },
-      workbox: {
+      generateSW: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest,woff,woff2}'],
         navigateFallback: '/',
         runtimeCaching: [

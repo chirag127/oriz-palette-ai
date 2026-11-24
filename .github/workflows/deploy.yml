@@ -3,6 +3,7 @@
 name: deploy
 
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
@@ -12,7 +13,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  validate:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies with peer validation
+        run: npm install --ignore-scripts --no-audit --no-fund
+      - name: Run brand domain tests
+        run: npm test
+      - name: Build static site and service worker
+        run: npm run build
   deploy:
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
